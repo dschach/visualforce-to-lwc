@@ -1,15 +1,245 @@
 {
-    "trailingComma": "none",
-    "singleQuote": true,
-    "tabWidth": 4,
-    "overrides": [
-        {
-            "files": "**/lwc/**/*.html",
-            "options": { "parser": "lwc" }
-        },
-        {
-            "files": "*.{cmp,page,component}",
-            "options": { "parser": "html" }
-        }
-    ]
+	"$schema": "https://json.schemastore.org/prettierrc.json",
+	"apexInsertFinalNewline": false,
+	"arrowParens": "avoid",
+	"bracketSameLine": true,
+	"bracketSpacing": true,
+	"endOfLine": "lf",
+	"experimentalTernaries": true,
+	"printWidth": 120,
+	"semi": true,
+	"singleAttributePerLine": false,
+	"singleQuote": true,
+	"tabWidth": 4,
+	"trailingComma": "none",
+	"useTabs": true,
+	"xmlSelfClosingSpace": true,
+	"overrides": [
+		{
+			"files": "*.{cmp,component,page,app,auradoc,design,evt,intf,tokens}",
+			"options": {
+				"attributeGroups": [
+					"^id$",
+					"^aura:id$",
+					"^name$",
+					"^src$",
+					"^for$",
+					"^type$",
+					"^href$",
+					"^value$",
+					"^title$",
+					"^alt$",
+					"^role$",
+					"$DEFAULT",
+					"^html-",
+					"$TYPE",
+					"^access$",
+					"^description$",
+					"^class$",
+					"^data-",
+					"$ARIA",
+					"^aria-",
+					"^on"
+				],
+				"attributeIgnoreCase": true,
+				"parser": "html",
+				"singleQuote": false
+			}
+		},
+		{
+			"files": "*.{page,component}",
+			"options": {
+				"htmlWhitespaceSensitivity": "css"
+			}
+		},
+		{
+			"files": "*.{auradoc,design,evt,intf,tokens}",
+			"options": {
+				"htmlWhitespaceSensitivity": "ignore"
+			}
+		},
+		{
+			"files": "*.{cls,trigger}",
+			"options": {
+				"parser": "apex",
+				"useTabs": true,
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": "*.trigger",
+			"options": {
+				"printWidth": 200
+			}
+		},
+		{
+			"files": "*.apex",
+			"options": {
+				"parser": "apex-anonymous",
+				"useTabs": true
+			}
+		},
+		{
+			"files": "*.xml",
+			"options": {
+				"parser": "xml",
+				"xmlSelfClosingSpace": true,
+				"xmlWhitespaceSensitivity": "preserve",
+				"useTabs": true,
+				"singleQuote": false
+			}
+		},
+		{
+			"files": [
+				"*-meta.xml",
+				"manifest/*.xml",
+				"package.xml",
+				"destructiveChanges*.xml"
+			],
+			"options": {
+				"useTabs": false,
+				"xmlSelfClosingSpace": false,
+				"tabWidth": 4,
+				"embeddedLanguageFormatting": "off"
+			}
+		},
+		{
+			"files": "*.{yml,yaml}",
+			"options": {
+				"parser": "yaml",
+				"singleQuote": true,
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": [".prettier*", "*prettier*js"],
+			"options": {
+				"printWidth": 80,
+				"singleQuote": false
+			}
+		},
+		{
+			"files": "*.css",
+			"options": {
+				"useTabs": true
+			}
+		},
+		{
+			"files": "*.md",
+			"options": {
+				"useTabs": false
+			}
+		},
+		{
+			"files": "*.json",
+			"options": {
+				"parser": "json-stringify",
+				"printWidth": 80,
+				"useTabs": false,
+				"singleQuote": false,
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": "package.json",
+			"options": {
+				"parser": "json-stringify",
+				"singleQuote": false,
+				"printWidth": 80
+			}
+		},
+		{
+			"files": "doc*/**/*.html",
+			"options": {
+				"attributeGroups": ["$CODE_GUIDE"],
+				"htmlWhitespaceSensitivity": "css",
+				"parser": "html",
+				"printWidth": 150,
+				"singleQuote": false
+			}
+		},
+		{
+			"files": "**/lwc/**/*.html",
+			"options": {
+				"parser": "lwc",
+				"printWidth": 120
+			}
+		},
+		{
+			"files": "*.json5",
+			"options": {
+				"quoteProps": "consistent",
+				"parser": "json5"
+			}
+		},
+		{
+			"files": "*.sh",
+			"options": {
+				"keepComments": true,
+				"useTabs": false,
+				"indent": 2,
+				"switchCaseIndent": true,
+				"spaceRedirects": true,
+				"functionNextLine": false
+			}
+		},
+		{
+			"files": "*.{cmp,page,component}",
+			"options": {
+				"parser": "html",
+				"useTabs": true,
+				"htmlWhitespaceSensitivity": "css"
+			}
+		},
+		{
+			"files": "*.{apex,soql}",
+			"options": {
+				"parser": "apex-anonymous"
+			}
+		},
+		{
+			"files": ".prettier*",
+			"options": {
+				"parser": "json",
+				"printWidth": 80,
+				"useTabs": true
+			}
+		},
+		{
+			"files": ["**/pmd/*.xml", "*ruleset*.xml", "config/**/*.xml"],
+			"options": {
+				"parser": "xml",
+				"xmlSelfClosingSpace": true,
+				"xmlWhitespaceSensitivity": "ignore"
+			}
+		},
+		{
+			"files": "*meta.xml",
+			"options": {
+				"parser": "xml",
+				"useTabs": false,
+				"xmlSelfClosingSpace": false,
+				"xmlWhitespaceSensitivity": "strict"
+			}
+		},
+		{
+			"files": "doc*/*.html",
+			"options": {
+				"parser": "html",
+				"useTabs": true,
+				"tabWidth": 2,
+				"printWidth": 150,
+				"htmlWhitespaceSensitivity": "ignore",
+				"singleQuote": false
+			}
+		}
+	],
+	"plugins": [
+		"prettier-plugin-apex",
+		"@prettier/plugin-xml",
+		"prettier-plugin-organize-attributes",
+		"prettier-plugin-pkg",
+		"prettier-plugin-sh"
+	]
 }
