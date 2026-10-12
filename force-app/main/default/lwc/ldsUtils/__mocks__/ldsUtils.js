@@ -1,3 +1,3 @@
 export function reduceErrors() {
-    return '';
+	return '';
 }

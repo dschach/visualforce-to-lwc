@@ -5,34 +5,34 @@ import TabsWrapper from 'c/tabsWrapper';
 jest.mock('../../exampleWrapper/exampleWrapper');
 
 describe('c-tabs-wrapper', () => {
-    afterEach(() => {
-        // The jsdom instance is shared across test cases in a single file so reset the DOM
-        while (document.body.firstChild) {
-            document.body.removeChild(document.body.firstChild);
-        }
-    });
+	afterEach(() => {
+		// The jsdom instance is shared across test cases in a single file so reset the DOM
+		while (document.body.firstChild) {
+			document.body.removeChild(document.body.firstChild);
+		}
+	});
 
-    it('shows inner component using c-example-wrapper', () => {
-        const element = createElement('c-tabs-wrapper', {
-            is: TabsWrapper
-        });
-        document.body.appendChild(element);
+	it('shows inner component using c-example-wrapper', () => {
+		const element = createElement('c-tabs-wrapper', {
+			is: TabsWrapper
+		});
+		document.body.appendChild(element);
 
-        // Verify required child components are present on render.
-        const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
-        expect(exampleEl).not.toBeNull();
+		// Verify required child components are present on render.
+		const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
+		expect(exampleEl).not.toBeNull();
 
-        const innerEl = exampleEl.querySelector('c-tabs');
-        expect(innerEl).not.toBeNull();
-    });
+		const innerEl = exampleEl.querySelector('c-tabs');
+		expect(innerEl).not.toBeNull();
+	});
 
-    it('is accessible', async () => {
-        const element = createElement('c-tabs-wrapper', {
-            is: TabsWrapper
-        });
+	it('is accessible', async () => {
+		const element = createElement('c-tabs-wrapper', {
+			is: TabsWrapper
+		});
 
-        document.body.appendChild(element);
+		document.body.appendChild(element);
 
-        await expect(element).toBeAccessible();
-    });
+		await expect(element).toBeAccessible();
+	});
 });

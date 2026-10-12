@@ -8,37 +8,30 @@ import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployee
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class EditRecord extends LightningElement {
-    @api recordId;
-    objectApiName = ACCOUNT_OBJECT;
+	@api recordId;
+	objectApiName = ACCOUNT_OBJECT;
 
-    fields = [
-        ACCOUNT_NAME_FIELD,
-        ACCOUNT_TYPE_FIELD,
-        ACCOUNT_PHONE_FIELD,
-        ACCOUNT_EMPLOYEES_FIELD
-    ];
+	fields = [ACCOUNT_NAME_FIELD, ACCOUNT_TYPE_FIELD, ACCOUNT_PHONE_FIELD, ACCOUNT_EMPLOYEES_FIELD];
 
-    // Only use if custom behavior needed
-    handleSuccess() {
-        this.dispatchEvent(
-            new ShowToastEvent({
-                title: 'Success',
-                message: this.recordId ? 'Account updated' : 'Account created',
-                variant: 'success'
-            })
-        );
-    }
+	// Only use if custom behavior needed
+	handleSuccess() {
+		this.dispatchEvent(
+			new ShowToastEvent({
+				title: 'Success',
+				message: this.recordId ? 'Account updated' : 'Account created',
+				variant: 'success'
+			})
+		);
+	}
 
-    // Only use if custom behavior needed
-    handleError() {
-        this.dispatchEvent(
-            new ShowToastEvent({
-                title: 'Error',
-                message: this.recordId
-                    ? 'Error updating Account'
-                    : 'Error creating Account',
-                variant: 'error'
-            })
-        );
-    }
+	// Only use if custom behavior needed
+	handleError() {
+		this.dispatchEvent(
+			new ShowToastEvent({
+				title: 'Error',
+				message: this.recordId ? 'Error updating Account' : 'Error creating Account',
+				variant: 'error'
+			})
+		);
+	}
 }

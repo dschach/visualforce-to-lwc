@@ -1,3 +1,5 @@
 {
-    "recommendations": ["vsls-contrib.codetour"]
+  "recommendations": [
+    "vsls-contrib.codetour"
+  ]
 }

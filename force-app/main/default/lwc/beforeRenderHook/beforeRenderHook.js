@@ -1,9 +1,9 @@
 import { LightningElement } from 'lwc';
 
 export default class BeforeRenderHook extends LightningElement {
-    courses;
+	courses;
 
-    connectedCallback() {
-        this.courses = ['Irrigation Systems', 'Soils', 'Organic Crops'];
-    }
+	connectedCallback() {
+		this.courses = ['Irrigation Systems', 'Soils', 'Organic Crops'];
+	}
 }

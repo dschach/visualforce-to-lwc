@@ -1,15 +1,15 @@
 import { LightningElement, api } from 'lwc';
 
 export default class ErrorPopover extends LightningElement {
-    @api errors;
-    showPopover = true;
+	@api errors;
+	showPopover = true;
 
-    handleCloseButtonIconClick() {
-        this.showPopover = false;
-    }
+	handleCloseButtonIconClick() {
+		this.showPopover = false;
+	}
 
-    @api
-    toggle() {
-        this.showPopover = !this.showPopover;
-    }
+	@api
+	toggle() {
+		this.showPopover = !this.showPopover;
+	}
 }

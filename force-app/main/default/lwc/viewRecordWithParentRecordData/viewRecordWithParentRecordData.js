@@ -7,22 +7,20 @@ import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
 import ACCOUNT_OWNER_NAME_FIELD from '@salesforce/schema/Account.Owner.Name';
 
 export default class ViewRecordWithParentRecordData extends LightningElement {
-    @api recordId;
+	@api recordId;
 
-    accountObject = ACCOUNT_OBJECT;
-    accountNameField = ACCOUNT_NAME_FIELD;
-    accountTypeField = ACCOUNT_TYPE_FIELD;
-    accountPhoneField = ACCOUNT_PHONE_FIELD;
+	accountObject = ACCOUNT_OBJECT;
+	accountNameField = ACCOUNT_NAME_FIELD;
+	accountTypeField = ACCOUNT_TYPE_FIELD;
+	accountPhoneField = ACCOUNT_PHONE_FIELD;
 
-    @wire(getRecord, {
-        recordId: '$recordId',
-        fields: [ACCOUNT_OWNER_NAME_FIELD]
-    })
-    record;
+	@wire(getRecord, {
+		recordId: '$recordId',
+		fields: [ACCOUNT_OWNER_NAME_FIELD]
+	})
+	record;
 
-    get ownerNameValue() {
-        return this.record && this.record.data
-            ? getFieldValue(this.record.data, ACCOUNT_OWNER_NAME_FIELD)
-            : '';
-    }
+	get ownerNameValue() {
+		return this.record && this.record.data ? getFieldValue(this.record.data, ACCOUNT_OWNER_NAME_FIELD) : '';
+	}
 }

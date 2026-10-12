@@ -6,13 +6,8 @@ import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
 import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployees';
 
 export default class ViewRecord extends LightningElement {
-    @api recordId;
-    objectApiName = ACCOUNT_OBJECT;
+	@api recordId;
+	objectApiName = ACCOUNT_OBJECT;
 
-    fields = [
-        ACCOUNT_NAME_FIELD,
-        ACCOUNT_TYPE_FIELD,
-        ACCOUNT_PHONE_FIELD,
-        ACCOUNT_EMPLOYEES_FIELD
-    ];
+	fields = [ACCOUNT_NAME_FIELD, ACCOUNT_TYPE_FIELD, ACCOUNT_PHONE_FIELD, ACCOUNT_EMPLOYEES_FIELD];
 }

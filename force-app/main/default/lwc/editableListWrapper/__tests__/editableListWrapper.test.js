@@ -8,33 +8,33 @@ jest.mock('../../editableList/editableList');
 jest.mock('../../exampleWrapper/exampleWrapper');
 
 describe('c-editable-list-wrapper', () => {
-    afterEach(() => {
-        // The jsdom instance is shared across test cases in a single file so reset the DOM
-        while (document.body.firstChild) {
-            document.body.removeChild(document.body.firstChild);
-        }
-    });
-    it('shows inner component using c-example-wrapper', () => {
-        // Create initial element
-        const element = createElement('c-editable-list-wrapper', {
-            is: EditableListWrapper
-        });
-        document.body.appendChild(element);
+	afterEach(() => {
+		// The jsdom instance is shared across test cases in a single file so reset the DOM
+		while (document.body.firstChild) {
+			document.body.removeChild(document.body.firstChild);
+		}
+	});
+	it('shows inner component using c-example-wrapper', () => {
+		// Create initial element
+		const element = createElement('c-editable-list-wrapper', {
+			is: EditableListWrapper
+		});
+		document.body.appendChild(element);
 
-        const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
-        expect(exampleEl).not.toBeNull();
+		const exampleEl = element.shadowRoot.querySelector('c-example-wrapper');
+		expect(exampleEl).not.toBeNull();
 
-        const innerEl = exampleEl.querySelector('c-editable-list');
-        expect(innerEl).not.toBeNull();
-    });
+		const innerEl = exampleEl.querySelector('c-editable-list');
+		expect(innerEl).not.toBeNull();
+	});
 
-    it('is accessible', async () => {
-        const element = createElement('c-editable-list-wrapper', {
-            is: EditableListWrapper
-        });
+	it('is accessible', async () => {
+		const element = createElement('c-editable-list-wrapper', {
+			is: EditableListWrapper
+		});
 
-        document.body.appendChild(element);
+		document.body.appendChild(element);
 
-        await expect(element).toBeAccessible();
-    });
+		await expect(element).toBeAccessible();
+	});
 });

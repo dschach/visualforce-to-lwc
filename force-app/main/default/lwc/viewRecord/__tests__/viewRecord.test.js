@@ -10,44 +10,42 @@ import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployee
 const RECORD_ID_INPUT = '0019A00000E8zAWQAZ';
 
 describe('c-view-record', () => {
-    afterEach(() => {
-        // The jsdom instance is shared across test cases in a single file so reset the DOM
-        while (document.body.firstChild) {
-            document.body.removeChild(document.body.firstChild);
-        }
-    });
+	afterEach(() => {
+		// The jsdom instance is shared across test cases in a single file so reset the DOM
+		while (document.body.firstChild) {
+			document.body.removeChild(document.body.firstChild);
+		}
+	});
 
-    it('renders lightning-record-form initialized', () => {
-        // Create initial element
-        const element = createElement('c-view-record', {
-            is: ViewRecord
-        });
-        // Set public properties
-        element.recordId = RECORD_ID_INPUT;
-        document.body.appendChild(element);
+	it('renders lightning-record-form initialized', () => {
+		// Create initial element
+		const element = createElement('c-view-record', {
+			is: ViewRecord
+		});
+		// Set public properties
+		element.recordId = RECORD_ID_INPUT;
+		document.body.appendChild(element);
 
-        // Retrieve from from DOM and validate if correct parameters
-        // have been passed to base component
-        const formEl = element.shadowRoot.querySelector(
-            'lightning-record-form'
-        );
-        expect(formEl.recordId).toBe(RECORD_ID_INPUT);
-        expect(formEl.objectApiName).toStrictEqual(ACCOUNT_OBJECT);
-        expect(formEl.fields).toStrictEqual([
-            ACCOUNT_NAME_FIELD,
-            ACCOUNT_TYPE_FIELD,
-            ACCOUNT_PHONE_FIELD,
-            ACCOUNT_EMPLOYEES_FIELD
-        ]);
-    });
+		// Retrieve from from DOM and validate if correct parameters
+		// have been passed to base component
+		const formEl = element.shadowRoot.querySelector('lightning-record-form');
+		expect(formEl.recordId).toBe(RECORD_ID_INPUT);
+		expect(formEl.objectApiName).toStrictEqual(ACCOUNT_OBJECT);
+		expect(formEl.fields).toStrictEqual([
+			ACCOUNT_NAME_FIELD,
+			ACCOUNT_TYPE_FIELD,
+			ACCOUNT_PHONE_FIELD,
+			ACCOUNT_EMPLOYEES_FIELD
+		]);
+	});
 
-    it('is accessible', async () => {
-        const element = createElement('c-view-record', {
-            is: ViewRecord
-        });
+	it('is accessible', async () => {
+		const element = createElement('c-view-record', {
+			is: ViewRecord
+		});
 
-        document.body.appendChild(element);
+		document.body.appendChild(element);
 
-        await expect(element).toBeAccessible();
-    });
+		await expect(element).toBeAccessible();
+	});
 });

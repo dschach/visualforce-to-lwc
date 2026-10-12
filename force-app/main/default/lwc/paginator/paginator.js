@@ -1,14 +1,14 @@
 import { LightningElement, api } from 'lwc';
 
 export default class Paginator extends LightningElement {
-    @api previousButtonDisabled;
-    @api nextButtonDisabled;
+	@api previousButtonDisabled;
+	@api nextButtonDisabled;
 
-    handlePrevious() {
-        this.dispatchEvent(new CustomEvent('previous'));
-    }
+	handlePrevious() {
+		this.dispatchEvent(new CustomEvent('previous'));
+	}
 
-    handleNext() {
-        this.dispatchEvent(new CustomEvent('next'));
-    }
+	handleNext() {
+		this.dispatchEvent(new CustomEvent('next'));
+	}
 }

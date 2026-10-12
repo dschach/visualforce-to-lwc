@@ -1,7 +1,7 @@
 public with sharing class BindingController {
-    public String courseName { get; set; }
+	public String courseName { get; set; }
 
-    public BindingController() {
-        courseName = 'Default';
-    }
+	public BindingController() {
+		courseName = 'Default';
+	}
 }

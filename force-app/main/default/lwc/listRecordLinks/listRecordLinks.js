@@ -8,30 +8,30 @@ import ACCOUNT_PHONE_FIELD from '@salesforce/schema/Account.Phone';
 import ACCOUNT_EMPLOYEES_FIELD from '@salesforce/schema/Account.NumberOfEmployees';
 
 const COLUMNS = [
-    {
-        label: 'Account Name',
-        type: 'navigateToRecord',
-        fieldName: ACCOUNT_ID_FIELD.fieldApiName,
-        typeAttributes: {
-            label: { fieldName: ACCOUNT_NAME_FIELD.fieldApiName }
-        }
-    },
-    { label: 'Type', fieldName: ACCOUNT_TYPE_FIELD.fieldApiName, type: 'text' },
-    {
-        label: 'Phone',
-        fieldName: ACCOUNT_PHONE_FIELD.fieldApiName,
-        type: 'phone'
-    },
-    {
-        label: 'Employees',
-        fieldName: ACCOUNT_EMPLOYEES_FIELD.fieldApiName,
-        type: 'number'
-    }
+	{
+		label: 'Account Name',
+		type: 'navigateToRecord',
+		fieldName: ACCOUNT_ID_FIELD.fieldApiName,
+		typeAttributes: {
+			label: { fieldName: ACCOUNT_NAME_FIELD.fieldApiName }
+		}
+	},
+	{ label: 'Type', fieldName: ACCOUNT_TYPE_FIELD.fieldApiName, type: 'text' },
+	{
+		label: 'Phone',
+		fieldName: ACCOUNT_PHONE_FIELD.fieldApiName,
+		type: 'phone'
+	},
+	{
+		label: 'Employees',
+		fieldName: ACCOUNT_EMPLOYEES_FIELD.fieldApiName,
+		type: 'number'
+	}
 ];
 
 export default class ListRecordLinks extends NavigationMixin(LightningElement) {
-    columns = COLUMNS;
+	columns = COLUMNS;
 
-    @wire(getAccounts)
-    accounts;
+	@wire(getAccounts)
+	accounts;
 }
