@@ -48,6 +48,9 @@
     "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
       "prettier --write"
     ],
+    "force-app/**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
+      "sed -i '' -e :a -e '/^\\s*$/d;N;ba'"
+    ],
     "**/lwc/**/*.js": [
       "eslint"
     ],

@@ -5,7 +5,9 @@
   "features": [
     "Walkthroughs",
     "EnableSetPasswordInApi",
-    "EinsteinGPTForDevelopers"
+    "EinsteinGPTForDevelopers",
+    "Einstein1AIPlatform",
+    "ApexGuruCodeAnalyzer"
   ],
   "settings": {
     "lightningExperienceSettings": {
